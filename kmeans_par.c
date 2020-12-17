@@ -1,10 +1,13 @@
+//December 2020
 //Marcelo dos Santos
+//marcelouepg@gmail.com
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <omp.h>
 #define DIM 3
-#define NUM_THREADS 4
+#define NUM_THREADS 4//number of threads used on kmeans
 
 #include <stdlib.h>
 #include <sys/time.h>
@@ -42,7 +45,7 @@ int main(void) {
 				sum[j*DIM+i] = 0.0;
 		}
 
-		//inicio da primeira regiao paralela
+		//parallel region starts here
 		#pragma omp parallel num_threads(NUM_THREADS)
 		{
 			int nthreads=omp_get_num_threads();
@@ -73,7 +76,7 @@ int main(void) {
 			}
 			
 		}
-		//final da primeira regiao paralela
+		//parallel region ends here
 		for (i=0;i<num_threads;i++){flips=flips+flip_par[i];flip_par[i]=0;}
 
 		for (i = 0; i < n; i++) {
