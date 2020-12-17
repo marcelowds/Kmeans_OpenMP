@@ -10,8 +10,10 @@ where k is the number of clusters and n is the number of points.
 Example for k=100 and n=40000:
 python getinput.py 100 40000 > dados.txt
 
-How to compile the kmeans parallel:
+How to compile the kmeans parallel C program:
+
 gcc -o kmeans_par -fopenmp kmeans_par.c -lm -O3 -Wall
 
 How to execute:
+
 ./kmeans_par < dados.txt
