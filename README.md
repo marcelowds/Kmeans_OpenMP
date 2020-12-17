@@ -1,5 +1,5 @@
 # Kmeans_OpenMP
-K-means algorithm implemented with OpenMP
+K-means algorithm implemented in C, paralelized with OpenMP
 
 
 How to generate random data to be clustered:
